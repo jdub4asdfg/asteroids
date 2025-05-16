@@ -7,6 +7,7 @@ Note that the project right now is very bare bones but I will be improving on it
 
 ## How to play
 Clone the repository and run
+
 `python3 main.py`
 
 Press `W` to move forward, `S` to move backward, `D` to rotate clockwise,`A` to rotate counter clockwise and `SPACE` to shoot.
@@ -19,8 +20,10 @@ There are 3 sizes of asteroids: Large, medium and small.
 Shooting asteroids causes them to split into 2 smaller sized asteroids. For example:
 
 - Shooting a large asteroid causes it to split into 2 medium asteroids.
--Shooting a medium asteroid causes it to split into 2 small asteroids.
--Shooting a small asteroid causes it to disappear.
+
+- Shooting a medium asteroid causes it to split into 2 small asteroids.
+
+- Shooting a small asteroid causes it to disappear.
 
 Note that asteroids that split from the shot asteroid travel fasterand move in slight tangents from the shot asteroid.
 
