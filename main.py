@@ -35,7 +35,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        screen.fill(000000) # setting screen to black
+        screen.fill("black") # setting screen to black
 
         for object in drawable:
             object.draw(screen)
@@ -43,8 +43,13 @@ def main():
         updatable.update(dt)
 
         for object in asteroids:
-           if object.collision_check(player):
+            if object.collision_check(player):
                 sys.exit("Game over!")
+
+            for bullet in shots:
+                if bullet.collision_check(object):
+                    pygame.sprite.Sprite.kill(bullet)
+                    pygame.sprite.Sprite.kill(object)
 
         pygame.display.flip() # updates display
 

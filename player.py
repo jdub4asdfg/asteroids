@@ -8,6 +8,7 @@ class Player(CircleShape): #player is a triangle, but we are using a circular hi
     def __init__(self, x, y):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
+        self.timer = 0
 
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
@@ -25,6 +26,8 @@ class Player(CircleShape): #player is a triangle, but we are using a circular hi
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
+        if self.timer > 0:
+            self.timer -= dt
 
         if keys[pygame.K_a]:
             self.rotate(-dt)
@@ -35,7 +38,9 @@ class Player(CircleShape): #player is a triangle, but we are using a circular hi
         if keys[pygame.K_w]:
             self.move(dt)
         if keys[pygame.K_SPACE]:
-            self.shoot()
+            if self.timer <= 0:
+                self.shoot()
+                self.timer = PLAYER_SHOOT_COOLDOWN
 
     def move(self, dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
