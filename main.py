@@ -1,5 +1,6 @@
 import pygame
 import sys
+
 from player import Player
 from constants import *
 from asteroid import Asteroid
@@ -16,27 +17,32 @@ def main():
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
 
+    # Packaging all objects into groups so that they are easier and more concise to reference (AFAIK it's just a pygame thing)
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
-
+    
     Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
     AsteroidField.containers = (updatable)
     Shot.containers = (shots, updatable, drawable)
 
-    player = Player(x, y) # creating a player object
-    asteroidfield = AsteroidField() # creating the asteroid field
+    # Creating a player object
+    player = Player(x, y)
 
-    # game loop
+    # Creating an asteroid field
+    asteroidfield = AsteroidField()
+
+    # Game loop
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
-        screen.fill("black") # setting screen to black
+        screen.fill("black")
 
+        # Where the packages come in handy
         for object in drawable:
             object.draw(screen)
 
@@ -51,9 +57,10 @@ def main():
                     asteroid.split()
                     bullet.kill()
 
-        pygame.display.flip() # updates display
+        pygame.display.flip()
 
-        dt = clock.tick(60) / 1000 # limits framerate to 60 fps
+        # Limits framerate to 60 fps
+        dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
     main()

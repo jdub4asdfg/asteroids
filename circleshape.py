@@ -1,7 +1,7 @@
 import pygame
 
-# base class for game objects
-class CircleShape(pygame.sprite.Sprite): #using pygame to create a circle for us
+# Base class for game objects
+class CircleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
         if hasattr(self, "containers"):
             super().__init__(self.containers)
@@ -13,16 +13,18 @@ class CircleShape(pygame.sprite.Sprite): #using pygame to create a circle for us
         self.radius = radius
 
     def draw(self, screen):
-        # sub-classes will override
+        # Sub-classes will override
         pass
 
     def update(self, dt):
-        # sub-classes will override
+        # Sub-classes will override
         pass
 
     def collision_check(self, other):
+        # Calculates euclidean distance between centres of 2 objects
         distance = pygame.Vector2.distance_to(self.position, other.position)
 
+        # If the euclidean distance is less than or equal to the 2 objects' radii combined, they are colliding
         if (distance <= (self.radius + other.radius)):
             return True
         else:

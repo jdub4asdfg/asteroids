@@ -20,7 +20,7 @@ Shooting asteroids causes them to split into 2 smaller sized asteroids. For exam
 - Shooting a medium asteroid causes it to split into 2 small asteroids.
 - Shooting a small asteroid causes it to disappear.
 
-Note that asteroids that split from the shot asteroid travel fasterand move in slight tangents from the shot asteroid.
+Note that asteroids that split from the shot asteroid travel faster and move in slight tangents from the shot asteroid.
 
 There is a rate limit on shooting but you can just hold down `SPACE` to shoot on cooldown.
 
