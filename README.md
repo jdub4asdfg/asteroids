@@ -1,12 +1,14 @@
 # Asteroids in pygame
 This is my second project in the Boot.dev Backend Developer Learning Path.
 
-In this project, I made use of what I learnt in the Object Oriented Programming Course to create an Asteroids game using pygame.
+In this project, I made use of what I learnt in the Object Oriented Programming Course to create an Asteroids game using Pygame.
 
 Note that the project right now is very bare bones but I will be improving on it as I get better at programming! Check out the To-Do list at the bottom to see what changes I've planned.
 
 ## How to play
-Clone the repository and run `python3 main.py` in your CLI.
+- Clone the repository using `git clone https://github.com/jdub4asdfg/asteroids.git`
+- Install Pygame using `pip install -r requirements.txt`
+- Run `python3 main.py` in your CLI.
 
 Press `W` to move forward, `S` to move backward, `D` to rotate clockwise,`A` to rotate counter clockwise and `SPACE` to shoot.
 
