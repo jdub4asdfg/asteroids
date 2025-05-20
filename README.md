@@ -1,7 +1,5 @@
 # Asteroids in pygame
-This is my second project in the Boot.dev Backend Developer Learning Path.
-
-In this project, I made use of what I learnt in the Object Oriented Programming Course to create an Asteroids game using Pygame.
+In this project, I made use of what I learnt in the Object Oriented Programming Course from Boot.dev to create an Asteroids game using Pygame.
 
 Note that the project right now is very bare bones but I will be improving on it as I get better at programming! Check out the To-Do list at the bottom to see what changes I've planned.
 
