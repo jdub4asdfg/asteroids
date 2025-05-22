@@ -1,6 +1,8 @@
 import pygame
 
 # Base class for game objects
+
+
 class CircleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
         if hasattr(self, "containers"):
@@ -25,7 +27,7 @@ class CircleShape(pygame.sprite.Sprite):
         distance = pygame.Vector2.distance_to(self.position, other.position)
 
         # If the euclidean distance is less than or equal to the 2 objects' radii combined, they are colliding
-        if (distance <= (self.radius + other.radius)):
+        if distance <= (self.radius + other.radius):
             return True
         else:
             return False
